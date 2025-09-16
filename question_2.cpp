@@ -1,49 +1,21 @@
+// Given a string,  reverse it using STACK. For example  “DataStructure” should be output as 
+// “erutcurtSataD.”  
 
-//Design the logic to remove the duplicate elements from an Array and after the deletion the array should contain the unique elements.
-
-
-#include<iostream>
+#include <iostream>
+#include <stack>
 using namespace std;
-int main (){
-    int Question_2;
-int arr[100];
-int elements;
-cout<<"Enter number of elements in the array";
-cin >> elements;
-cout<<"Enter the elements: ";
-for(int i=0;i<elements;i++){
-    cin>> arr[i];
-}
-cout<<"The given array is: ";
-for(int i=0;i<elements;i++){
-    cout<< arr[i] ;
-}
-int position;
-for (int i = 0; i < elements; i++)
-{
-for (int j = i+1; j < elements; j++)
-{
-    if(arr[i]==arr[j]){
-    for(int k=j;k<elements;k++){
-        arr[k]=arr[k+1];
+
+int main() {
+    string str = "DataStructure";
+    stack<char> s;
+
+    for (char c : str) s.push(c);
+
+    cout << "Reversed string: ";
+    while (!s.empty()) {
+  cout << s.top();
+  s.pop();
     }
-    elements--;
-    }
-  else{j++;}
+    cout << endl;
+    return 0;
 }
-}
-
-
-cout<<"The new array is: "
-for(int i=0;i<elements;i++){
-cout<< arr[i];
-}
-return 0;
-}
-
-
-
-
-
-
-
